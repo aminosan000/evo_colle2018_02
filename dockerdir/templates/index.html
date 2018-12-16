@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>名刺登録</title>
+</head>
+<body>
+  <style>
+    header { background-color: #4169e1; padding: 1px 10px; color: white; text-shadow: 1px 1px 1px black; }
+    body { text-align: center; font-family: "メイリオ", Meiryo, sans-serif; }
+    th, td { padding: 10px 20px; }
+    th { background-color: #bbc8e6; }
+    td { background-color: #f7fcfe; }
+    table { margin: 0 auto; }
+  </style>
+  <header>
+    <h2>名刺管理システム</h2>
+  </header>
+  <form action="/" method="post">
+    <p>氏名: <input type="text" name="name"></p>
+    <p>会社: <input type="text" name="company"></p>
+    <p>TEL: <input type="text" name="tel"></p>
+    <p>Mail: <input type="text" name="mail"></p>
+    <p><input type="submit" value="登録"></p>
+  </form>
+  <p>登録されている情報</p>
+  <table>
+    <tr>
+      <th>氏名</th><th>会社</th><th>TEL</th><th>Mail</th>
+    </tr>
+    <tr>
+      <td>やまぐち</td><td>KDDI Evolva, Inc.</td><td>08011112222</td><td>yama@kevo.com</td>
+    </tr>
+    {% for row in registered %}
+    <tr>
+      <td>{{ row.name }}</td><td>{{ row.company }}</td><td>{{ row.tel }}</td><td>{{ row.mail }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
