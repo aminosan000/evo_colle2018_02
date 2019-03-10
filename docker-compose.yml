@@ -1,8 +1,8 @@
 version: "3"
 services:
-  evoserver:
-    build: dockerdir
+  web:
+    build: web
     image: evo/python:1.0
     ports:
       - 5000:80
-    container_name: evoserver
+    container_name: evoweb
